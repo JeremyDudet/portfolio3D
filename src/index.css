@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .htmlScreen img {
+    width: 60.5px;
+    height: 129px;
+    border: none;
+    border-radius: 8px;
+    background: black;
+  }
+}
