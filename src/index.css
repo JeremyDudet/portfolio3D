@@ -8,12 +8,8 @@
 
   .htmlScreen img {
     position: absolute;
-    top: -1150px;
-    left: -480px;
-    border-radius: 130px;
-    min-width: 1242px;
-    min-height: 2688px;
-    max-width: 1242px;
-    max-height: 2688px;
+    border-radius: 70px;
+    min-width: 621px;
+    min-height: 1344px;
   }
 }
