@@ -5,9 +5,9 @@ import IphoneModel from './IphoneModel';
 
 export default function Experience() {
   return (
-    <Canvas gl={{ antialias: false }} dpr={Math.max(window.devicePixelRatio, 2)}>
+    <Canvas>
       <Environment preset="sunset" />
-      <color args={['#242424']} attach="background" />
+      <color args={['#000']} attach="background" />
       <mesh>
         <Float rotationIntensity={1}>
           <IphoneModel />

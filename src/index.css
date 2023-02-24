@@ -4,6 +4,8 @@
 
 @layer components {
   .htmlScreen {
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .htmlScreen img {
