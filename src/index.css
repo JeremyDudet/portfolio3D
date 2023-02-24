@@ -5,6 +5,7 @@
 @layer components {
   .htmlScreen {
     contain: strict;
+    display: flex;
   }
 
   .htmlScreen img {
