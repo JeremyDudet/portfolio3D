@@ -3,7 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+  .htmlScreen {
+    position: static;
+    contain: strict;
+  }
+
   .htmlScreen img {
+    position: static;
     border-radius: 8px;
+    min-width: 60px;
+    min-height: 130px;
+    max-width: 60px;
+    max-height: 130px;
   }
 }
