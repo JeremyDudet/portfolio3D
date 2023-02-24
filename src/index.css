@@ -4,12 +4,13 @@
 
 @layer components {
   .htmlScreen {
-    position: static;
     contain: strict;
   }
 
   .htmlScreen img {
-    position: static;
+    position: absolute;
+    top: -65px;
+    left: -30px;
     border-radius: 8px;
     min-width: 60px;
     min-height: 130px;
