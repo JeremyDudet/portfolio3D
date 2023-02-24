@@ -148,14 +148,8 @@ export default function Model(props) {
           position={[-0.66, 0.21, 0]}
         />
         <mesh>
-          <Html transform wrapperClass="htmlScreen" position={[0, 0, 0.089]} center visible>
-            <img
-              opacity={1}
-              visible={true}
-              onClick={() => console.log('clicked img')}
-              src={screenshot}
-              alt="App Screenshot"
-            />
+          <Html transform wrapperClass="htmlScreen" position={[0, 0, 0.089]} distanceFactor={0.48}>
+            <img src={screenshot} alt="App Screenshot" />
           </Html>
         </mesh>
         {props.children}
