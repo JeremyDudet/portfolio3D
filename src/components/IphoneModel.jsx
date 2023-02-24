@@ -148,12 +148,7 @@ export default function Model(props) {
           position={[-0.66, 0.21, 0]}
         />
         <mesh>
-          <Html
-            transform
-            wrapperClass="htmlScreen"
-            position={[0.165, -0.235, 0.089]}
-            center
-            visible>
+          <Html transform wrapperClass="htmlScreen" position={[0, 0, 0.089]} center visible>
             <img
               opacity={1}
               visible={true}
