@@ -49,12 +49,17 @@ export default function Model(props) {
     const x = ((clientX - left) / width) * 2 - 1;
     const y = ((clientY - bottom) / height) * 2 - 1;
 
-    const maxRotationY = Math.PI / 8;
-    const maxRotationX = Math.PI / 12;
+    const maxRotationY = Math.PI / 6;
+    const maxRotationX = Math.PI / 4;
+
+    const mouseX = THREE.MathUtils.clamp(x * 1.2, -maxRotationY, maxRotationY);
+    const mouseY = THREE.MathUtils.clamp(y + 2, -maxRotationX, maxRotationX);
+
+    console.log('X: ' + mouseX, 'Y: ' + mouseY);
 
     setRotation({
-      x: THREE.MathUtils.clamp(y * 1.5, -maxRotationX, maxRotationX),
-      y: THREE.MathUtils.clamp(x * 1.2, -maxRotationY, maxRotationY)
+      x: mouseY,
+      y: mouseX
     });
   };
 
@@ -149,7 +154,7 @@ export default function Model(props) {
             onClick={() => console.log('click')}
             transform
             wrapperClass="htmlScreen"
-            position={[0.165, -0.235, 0.11]}>
+            position={[0.165, -0.235, 0.089]}>
             <img onClick={() => console.log('clicked img')} src={screenshot} alt="Alt text" />
           </Html>
         </mesh>
