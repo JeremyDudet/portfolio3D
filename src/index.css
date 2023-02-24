@@ -4,7 +4,6 @@
 
 @layer components {
   .htmlScreen {
-    display: flex;
   }
 
   .htmlScreen img {
