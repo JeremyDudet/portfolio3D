@@ -1,10 +1,13 @@
 import React from 'react';
 import Experience from './components/Experience';
+import { Canvas } from '@react-three/fiber';
 
 function App() {
   return (
     <div className="h-[100vh] bg-black">
-      <Experience />
+      <Canvas>
+        <Experience />
+      </Canvas>
     </div>
   );
 }
