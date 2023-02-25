@@ -3,7 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+  .featureSection {
+    pointer-events: none;
+    width: 700px;
+    color: white;
+    z-index: -100;
+  }
+  .featureSection-hide {
+    display: none;
+  }
   .htmlScreen {
+    cursor: all-scroll;
     margin-right: auto;
     margin-left: auto;
   }
@@ -13,5 +23,40 @@
     border-radius: 73px;
     min-width: 622px;
     min-height: 1348px;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  .card {
+    opacity: 0;
+    transition: all 0.5s;
+    animation: slideIn 0.5s ease-in-out 0.05s forwards;
+  }
+
+  .card-hide {
+    opacity: 0;
+    transition: all 0.5s;
+    animation: slideOut 0.5s ease-in-out 0.05s forwards;
   }
 }

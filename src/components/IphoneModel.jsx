@@ -8,8 +8,10 @@ import { Html, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import screenshot from '../../public/screenshot.jpeg';
+import { easing } from 'maath';
 
 export default function IphoneModel(props) {
+  const [iphone] = useState(() => new THREE.Object3D());
   const calculateScale = (windowWidth) => {
     const minSize = 0.8;
     const maxSize = 1.2;
@@ -34,51 +36,10 @@ export default function IphoneModel(props) {
     };
   }, []);
 
-  useEffect(() => {
-    window.addEventListener('mousemove', onMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-    };
-  }, []);
-
-  const [rotation, setRotation] = useState({
-    x: 0,
-    y: 0
+  useFrame((state, dt) => {
+    iphone.lookAt(state.pointer.x, state.pointer.y, 2);
+    easing.dampQ(group.current.quaternion, iphone.quaternion, 0.35, dt);
   });
-
-  useFrame((state, delta) => {
-    // Gradually move towards the target rotation angles
-    const lerpFactor = delta * 1.5; // this sets the speed of the animation
-    group.current.rotation.x = THREE.MathUtils.lerp(
-      group.current.rotation.x,
-      rotation.x,
-      lerpFactor
-    );
-    group.current.rotation.y = THREE.MathUtils.lerp(
-      group.current.rotation.y,
-      rotation.y,
-      lerpFactor
-    );
-  });
-
-  const onMouseMove = (event) => {
-    const { clientX, clientY } = event;
-    const { left, bottom, width, height } = event.target.getBoundingClientRect();
-
-    const x = ((clientX - left) / width) * 2 - 1;
-    const y = ((clientY - bottom) / height) * 2 - 1;
-
-    const maxRotationY = Math.PI / 6;
-    const maxRotationX = Math.PI / 10;
-
-    const mouseX = THREE.MathUtils.clamp(x * 1.2, -maxRotationY, maxRotationY);
-    const mouseY = THREE.MathUtils.clamp(y + 2.2, -maxRotationX, maxRotationX);
-
-    setRotation({
-      x: mouseY,
-      y: mouseX
-    });
-  };
 
   return (
     <group
@@ -86,8 +47,9 @@ export default function IphoneModel(props) {
       ref={group}
       {...props}
       dispose={null}
-      onMouseMove={onMouseMove}>
-      <group position={[0, 0.56, 0]}>
+      // onMouseMove={onMouseMove}
+    >
+      <group position={[0, 0, 0]}>
         <mesh geometry={nodes.Circle038.geometry} material={nodes.Circle038.material} />
         <mesh geometry={nodes.Circle038_1.geometry} material={materials['Front.001']} />
         <mesh geometry={nodes.Circle038_2.geometry} material={nodes.Circle038_2.material} />
@@ -177,7 +139,7 @@ export default function IphoneModel(props) {
             wrapperClass="htmlScreen"
             position={[-0.58, 1.39, 0.089]}
             distanceFactor={0.96}>
-            <img onClick={() => console.log('asdf')} src={screenshot} alt="App Screenshot" />
+            <img onClick={() => props.setActive()} src={screenshot} alt="App Screenshot" />
           </Html>
         </mesh>
         {props.children}
