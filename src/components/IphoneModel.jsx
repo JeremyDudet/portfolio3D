@@ -5,22 +5,23 @@ Customized to load my own screenshot images
 
 import React, { useRef, useState, useEffect } from 'react';
 import { Html, useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import screenshot from '../../public/screenshot.jpeg';
+import screenshot from '/screenshot.jpeg';
 import { easing } from 'maath';
+
+const calculateScale = (windowWidth) => {
+  const minSize = 0.8;
+  const maxSize = 1.2;
+  if (windowWidth / 500 < minSize) {
+    return minSize;
+  }
+  const size = Math.min(windowWidth / 500, maxSize);
+  return size;
+};
 
 export default function IphoneModel(props) {
   const [iphone] = useState(() => new THREE.Object3D());
-  const calculateScale = (windowWidth) => {
-    const minSize = 0.8;
-    const maxSize = 1.2;
-    if (windowWidth / 500 < minSize) {
-      return minSize;
-    }
-    const size = Math.min(windowWidth / 500, maxSize);
-    return size;
-  };
   const [modelScale, setModelScale] = useState(calculateScale(window.innerWidth));
   const group = useRef();
   const { nodes, materials } = useGLTF(
@@ -38,7 +39,7 @@ export default function IphoneModel(props) {
 
   useFrame((state, dt) => {
     iphone.lookAt(state.pointer.x, state.pointer.y, 2);
-    easing.dampQ(group.current.quaternion, iphone.quaternion, 0.35, dt);
+    easing.dampQ(group.current.quaternion, iphone.quaternion, 0.45, dt);
   });
 
   return (
