@@ -11,8 +11,8 @@ import screenshot from '/screenshot.jpeg';
 import { easing } from 'maath';
 
 const calculateScale = (windowWidth) => {
-  const minSize = 1;
-  const maxSize = 1.1;
+  const minSize = 1.1;
+  const maxSize = 1.4;
   if (windowWidth / 500 < minSize) {
     return minSize;
   }
