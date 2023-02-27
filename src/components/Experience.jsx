@@ -27,7 +27,9 @@ export default function Experience() {
   };
 
   const { position } = useSpring({
-    position: active ? [smallWindow ? 0 : -1.5, smallWindow ? 2 : 0.5, 0] : [0, 0.5, 0],
+    position: active
+      ? [smallWindow ? 0 : -1.5, smallWindow ? 3 : 0.5, smallWindow ? -2 : -1.5]
+      : [0, 0.5, 0],
     config: {
       mass: 5,
       tension: 200,
@@ -39,8 +41,8 @@ export default function Experience() {
     rotation: active
       ? [
           smallWindow ? 0 : Math.PI / 12,
-          smallWindow ? Math.PI / 10 : Math.PI / 8,
-          smallWindow ? 0 : 0
+          smallWindow ? Math.PI / 6 : Math.PI / 8,
+          smallWindow ? Math.PI / 14 : 0
         ]
       : [0, 0, 0],
     config: {
@@ -65,7 +67,7 @@ export default function Experience() {
   return (
     <>
       <Environment preset="sunset" />
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.3} />
       <directionalLight position={[1, 3, 1]} />
       <animated.mesh position={position} rotation={rotation} ref={iphoneRef}>
         <Float rotationIntensity={0.5}>
@@ -81,7 +83,7 @@ export default function Experience() {
           position={[smallWindow ? 0 : 0, smallWindow ? -2 : 0, 0]}>
           <div className={` ${active ? 'card' : 'card-hide'}`}>
             <div
-              class={`border-container relative overflow-hidden bg-transparent w-${size.width} h-[450px]`}></div>
+              class={`border-container relative overflow-hidden bg-blue-200 w-${size.width} h-[450px]`}></div>
           </div>
         </Html>
       </mesh>
