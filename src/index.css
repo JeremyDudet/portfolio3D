@@ -5,13 +5,31 @@
 @layer components {
   .featureSection {
     pointer-events: none;
-    width: 700px;
     color: white;
     z-index: 9999;
   }
-  @media (1180px) {
-    .featureSection {
-      width: 1000px;
+  .border-container {
+    border: 1px solid white;
+  }
+  @media (max-width: 1180px) {
+    .border-container {
+      padding: 1rem 1rem;
+      width: 80vw;
+      height: 350px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .border-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 1rem;
+      width: 90vw;
+      height: 350px;
+      /* transform: translateX(10px); */
     }
   }
 

@@ -11,8 +11,8 @@ import screenshot from '/screenshot.jpeg';
 import { easing } from 'maath';
 
 const calculateScale = (windowWidth) => {
-  const minSize = 0.8;
-  const maxSize = 1.2;
+  const minSize = 1;
+  const maxSize = 1.1;
   if (windowWidth / 500 < minSize) {
     return minSize;
   }
@@ -38,8 +38,8 @@ export default function IphoneModel(props) {
   }, []);
 
   useFrame((state, dt) => {
-    iphone.lookAt(state.pointer.x, state.pointer.y, 2);
-    easing.dampQ(group.current.quaternion, iphone.quaternion, 0.45, dt);
+    iphone.lookAt(state.pointer.x, state.pointer.y, 3);
+    easing.dampQ(group.current.quaternion, iphone.quaternion, 0.2, dt);
   });
 
   return (
