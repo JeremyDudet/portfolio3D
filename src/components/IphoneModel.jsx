@@ -11,7 +11,7 @@ import screenshot from '/screenshot.jpeg';
 import { easing } from 'maath';
 
 const calculateScale = (windowWidth) => {
-  const minSize = 1.3;
+  const minSize = 1.2;
   const maxSize = 1.5;
   if (windowWidth / 500 < minSize) {
     return minSize;
@@ -142,7 +142,7 @@ export default function IphoneModel(props) {
             wrapperClass="htmlScreen"
             position={[-0.58, 1.39, 0.089]}
             distanceFactor={0.96}>
-            <img onClick={() => props.setActive()} src={screenshot} alt="App Screenshot" />
+            <img onClick={() => props.setActive()} src={props.image} alt="App Screenshot" />
           </Html>
         </mesh>
         {props.children}

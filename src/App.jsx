@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-black">
+    <div className="w-screen h-screen bg-[#0d0d10]">
       <Canvas>
         <Experience />
       </Canvas>

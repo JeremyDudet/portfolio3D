@@ -7,29 +7,27 @@
     pointer-events: none;
     color: white;
     z-index: 9999;
+    scroll-behavior: auto;
   }
   .border-container {
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    width: 40vw;
+    height: auto;
   }
-  @media (max-width: 1180px) {
+  @media (max-width: 1178px) {
     .border-container {
       padding: 1rem 1rem;
-      width: 80vw;
-      height: 350px;
+      width: 85vw;
+      height: 40vh;
     }
   }
 
   @media (max-width: 600px) {
     .border-container {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
       padding: 1rem 1rem;
       width: 90vw;
-      height: 350px;
-      /* transform: translateX(10px); */
+      height: 40vh;
+      transform: translateX(10px);
     }
   }
 
@@ -51,6 +49,9 @@
     min-width: 622px;
     min-height: 1348px;
     z-index: -9999;
+    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')
+        39 39,
+      auto;
   }
 
   @keyframes slideIn {
