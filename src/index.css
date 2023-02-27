@@ -3,17 +3,16 @@
 @tailwind utilities;
 
 @layer components {
-  .featureSection {
+  .html-section {
     pointer-events: none;
     color: white;
     z-index: 9999;
-    scroll-behavior: auto;
   }
   .border-container {
     /* border: 1px solid white; */
     width: 40vw;
-    height: auto;
   }
+
   @media (max-width: 1178px) {
     .border-container {
       padding: 1rem 1rem;
@@ -36,22 +35,18 @@
     pointer-events: auto;
   }
 
-  .htmlScreen {
-    cursor: all-scroll;
+  .iphoneScreen {
+    position: relative;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .htmlScreen img {
-    /* pointer-events: none; */
+  .iphoneScreen img {
     position: absolute;
     border-radius: 73px;
     min-width: 622px;
     min-height: 1348px;
     z-index: -9999;
-    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')
-        39 39,
-      auto;
   }
 
   @keyframes slideIn {
@@ -78,12 +73,14 @@
   }
 
   .card {
+    height: fit-content;
     opacity: 0;
     transition: all 0.5s;
     animation: slideIn 0.5s ease-in-out 0.05s forwards;
   }
 
-  .card-hide {
+  .cardHidden {
+    opacity: 1;
     transition: all 0.5s;
     animation: slideOut 0.5s ease-in-out 0.05s forwards;
   }
