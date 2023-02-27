@@ -5,7 +5,7 @@ Customized to load my own screenshot images
 
 import React, { useRef, useState, useEffect } from 'react';
 import { Html, useGLTF } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import screenshot from '/screenshot.jpeg';
 import { easing } from 'maath';
@@ -38,8 +38,10 @@ export default function IphoneModel(props) {
   }, []);
 
   useFrame((state, dt) => {
-    iphone.lookAt(state.pointer.x, state.pointer.y, 3);
-    easing.dampQ(group.current.quaternion, iphone.quaternion, 0.2, dt);
+    if (window.innerWidth > 600) {
+      iphone.lookAt(state.pointer.x, state.pointer.y, 3);
+      easing.dampQ(group.current.quaternion, iphone.quaternion, 0.2, dt);
+    }
   });
 
   return (
