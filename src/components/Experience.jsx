@@ -81,7 +81,7 @@ export default function Experience() {
           center={smallWindow ? true : false}
           ref={htmlRef}
           wrapperClass="html-section"
-          position={[smallWindow ? 0 : 0, smallWindow ? -1.7 : 2, 0]}
+          position={[smallWindow ? 0 : 0, smallWindow ? -1.7 : 2.3, 0]}
         >
           <div
             className={` h-full flex flex-col items-center border-container relative w-${size.width}`}
