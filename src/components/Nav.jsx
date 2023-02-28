@@ -1,6 +1,5 @@
 import React from 'react'
 import { Html } from '@react-three/drei'
-import AnimatedButton from './AnimatedButton'
 
 function Nav({ position }) {
   return (
@@ -11,7 +10,7 @@ function Nav({ position }) {
 
           <a
             href="mailto:j.dudet@gmail.com"
-            className="text-lg py-2 px-10 bg-[#2C2C2E] rounded-full font-semibold"
+            className="text-md sm:text-lg py-2 px-10 bg-[#2C2C2E] rounded-full font-semibold"
           >
             build with me
           </a>

@@ -4,14 +4,13 @@
 
 @layer components {
   .html-section {
-    /* pointer-events: none; */
+    pointer-events: none;
     color: white;
     z-index: 9999;
     min-width: 100%;
     min-height: fit-content;
   }
   .border-container {
-    /* border: 1px solid white; */
     width: 40vw;
   }
 
@@ -28,8 +27,6 @@
       padding: 1rem 1rem;
       width: 90vw;
       height: 50vh;
-      transform: translateX(10px);
-      overflow: hidden;
     }
   }
 
@@ -51,40 +48,5 @@
     min-width: 622px;
     min-height: 1348px;
     z-index: -9999;
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideOut {
-    from {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-    to {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-  }
-
-  .card {
-    opacity: 0;
-    transition: all 0.5s;
-    animation: slideIn 0.5s ease-in-out 0.05s forwards;
-  }
-
-  .cardHidden {
-    opacity: 1;
-    transition: all 0.5s;
-    animation: slideOut 0.5s ease-in-out 0.05s forwards;
   }
 }
