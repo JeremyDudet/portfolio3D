@@ -7,7 +7,10 @@ function App() {
 
   return (
     <div className="relative w-screen h-screen  bg-[#0d0d10] overflow-auto">
-      <Canvas ref={canvasRef} className="absolute top-0 h-full">
+      <Canvas
+        ref={canvasRef}
+        className="absolute top-0 h-full pointer-events-none "
+      >
         <Experience />
       </Canvas>
     </div>
