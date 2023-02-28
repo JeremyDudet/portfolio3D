@@ -1,6 +1,6 @@
-import React from 'react';
-import { Html } from '@react-three/drei';
-import AnimatedButton from './AnimatedButton';
+import React from 'react'
+import { Html } from '@react-three/drei'
+import AnimatedButton from './AnimatedButton'
 
 function Nav({ position }) {
   return (
@@ -11,13 +11,14 @@ function Nav({ position }) {
 
           <a
             href="mailto:j.dudet@gmail.com"
-            className="text-lg py-4 px-12 bg-[#1C1C1E] rounded-full font-bold">
+            className="text-lg py-2 px-10 bg-[#2C2C2E] rounded-full font-semibold"
+          >
             build with me
           </a>
         </nav>
       </Html>
     </mesh>
-  );
+  )
 }
 
-export default Nav;
+export default Nav

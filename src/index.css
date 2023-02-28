@@ -4,7 +4,7 @@
 
 @layer components {
   .html-section {
-    pointer-events: none;
+    /* pointer-events: none; */
     color: white;
     z-index: 9999;
   }
@@ -21,12 +21,13 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 640px) {
     .border-container {
       padding: 1rem 1rem;
       width: 90vw;
-      height: 40vh;
+      height: 50vh;
       transform: translateX(10px);
+      overflow: hidden;
     }
   }
 
@@ -39,6 +40,7 @@
     position: relative;
     margin-right: auto;
     margin-left: auto;
+    overflow: hidden;
   }
 
   .iphoneScreen img {
@@ -73,15 +75,26 @@
   }
 
   .card {
-    height: fit-content;
+    height: 40vh;
     opacity: 0;
     transition: all 0.5s;
     animation: slideIn 0.5s ease-in-out 0.05s forwards;
+    overflow: auto;
   }
 
   .cardHidden {
     opacity: 1;
     transition: all 0.5s;
     animation: slideOut 0.5s ease-in-out 0.05s forwards;
+  }
+  .shadow {
+    position: absolute;
+    top: 8em;
+    width: 100%;
+    height: 2em;
+    background: -webkit-linear-gradient(transparent, white);
+    background: -o-linear-gradient(transparent, white);
+    background: -moz-linear-gradient(transparent, white);
+    background: linear-gradient(transparent, white);
   }
 }

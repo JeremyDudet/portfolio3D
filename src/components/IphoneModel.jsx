@@ -4,7 +4,7 @@ Customized to load my own screenshot images
 */
 
 import React, { useRef, useState, useEffect } from 'react';
-import { Html, useGLTF } from '@react-three/drei';
+import { Html, useGLTF, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { easing } from 'maath';
@@ -140,7 +140,8 @@ export default function IphoneModel(props) {
             transform
             wrapperClass="iphoneScreen"
             position={[-0.58, 1.39, 0.089]}
-            distanceFactor={0.96}>
+            distanceFactor={0.96}
+          >
             <img onClick={props.handleClick} src={props.image} alt="App Screenshot" />
           </Html>
         </mesh>
