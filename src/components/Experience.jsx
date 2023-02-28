@@ -85,7 +85,7 @@ export default function Experience() {
     return (
       <div className={`${active ? 'card' : 'cardHidden'}`}>
         <div
-          className={`flex flex-col items-center border-container relative w-${size.width}`}
+          className={`h-full flex flex-col items-center border-container relative w-${size.width}`}
         >
           <div className="w-full text-md sm:text-xl md:text-2xl">
             <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-6xl">
@@ -138,8 +138,7 @@ export default function Experience() {
           center={smallWindow ? true : false}
           ref={htmlRef}
           wrapperClass="html-section"
-          position={[smallWindow ? 0 : 0.2, smallWindow ? -2 : 2, 0]}
-          style={{ overflow: 'visible' }}
+          position={[smallWindow ? 0 : 0, smallWindow ? -1.7 : 2, 0]}
         >
           {showCard && <CardContent active={active} />}
         </Html>
