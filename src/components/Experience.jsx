@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import { Environment, Float, Html } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useSpring, animated } from '@react-spring/three'
@@ -73,7 +73,7 @@ export default function Experience() {
     }
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (active) {
       setShowCard(true)
     } else {
