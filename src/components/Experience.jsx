@@ -72,7 +72,7 @@ export default function Experience() {
       <Nav position={[0, 3.45, 0]} />
       <animated.mesh position={position} rotation={rotation} ref={iphoneRef}>
         {smallWindow ? (
-          <Html position={[1.8, 2.1, 0]}>
+          <Html position={[1.9, 2.1, 0]}>
             <AnimatedHtmlSection
               isVisible={isInfoCardVisible}
               delay={300}
