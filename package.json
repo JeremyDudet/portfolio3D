@@ -12,6 +12,8 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
+    "@14islands/r3f-scroll-rig": "^8.9.1",
+    "@heroicons/react": "^2.0.16",
     "@react-spring/three": "^9.7.0",
     "@react-spring/web": "^9.7.0",
     "@react-three/drei": "^9.56.25",

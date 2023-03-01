@@ -40,7 +40,7 @@ export default function IphoneModel(props) {
   useFrame((state, dt) => {
     if (window.innerWidth > 600) {
       iphone.lookAt(state.pointer.x, state.pointer.y, 3)
-      easing.dampQ(group.current.quaternion, iphone.quaternion, 0.2, dt)
+      easing.dampQ(group.current.quaternion, iphone.quaternion, 0.3, dt)
     }
   })
 

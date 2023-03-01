@@ -3,17 +3,14 @@ import Experience from './components/Experience'
 import { Canvas } from '@react-three/fiber'
 
 function App() {
-  const canvasRef = useRef(null)
-
   return (
-    <div className="relative w-screen h-screen  bg-[#0d0d10] overflow-auto">
-      <Canvas
-        ref={canvasRef}
-        className="absolute top-0 h-full pointer-events-none "
-      >
-        <Experience />
-      </Canvas>
-    </div>
+    <>
+      <div className="relative w-screen h-screen bg-[#0d0d10] overflow-auto">
+        <Canvas>
+          <Experience />
+        </Canvas>
+      </div>
+    </>
   )
 }
 
